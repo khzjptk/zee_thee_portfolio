@@ -1,0 +1,15 @@
+# Files in this folder that must never be published.
+#
+# Cloudflare uploads everything under the output directory, which is the repo
+# root. Without this the whole .git directory is served, and the entire history
+# can be reconstructed from it with a tool like git-dumper.
+#
+# _headers is deliberately absent: the platform reads it and does not serve it.
+.git
+.gitignore
+.assetsignore
+.env
+.env.*
+README.md
+Caddyfile
+docker-compose.yml
