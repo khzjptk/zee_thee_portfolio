@@ -11,5 +11,3 @@
 .env
 .env.*
 README.md
-Caddyfile
-docker-compose.yml

@@ -93,3 +93,17 @@ cd web && python3 -m http.server 8080
 - ငွေပြန်အမ်းမည် ကတိ
 - Speed အာမခံချက်
 - Server IP, region အရေအတွက်၊ Outline API အချက်အလက်
+
+## Hosting
+
+Cloudflare Pages / Workers static assets မှ တင်သည်။ Build step မရှိပါ —
+repo ၏ root ကို တိုက်ရိုက် တင်သည် (`Build command` ဗလာ, `Root directory` `/`)။
+
+- `_headers` — security header များ။ Cloudflare က ဖတ်ပြီး serve မလုပ်ပါ။
+- `.assetsignore` — `.git` စသည်တို့ကို မတင်စေရန်။ **ဖျက်၍ မရပါ** — မရှိလျှင်
+  `.git` directory တစ်ခုလုံး public ဖြစ်ပြီး repo history အားလုံး
+  ဆွဲထုတ်၍ ရသွားသည် (2026-09-07 တွင် တကယ် ဖြစ်ခဲ့ပြီး ပြင်ပြီး)။
+
+**Server ပေါ်တွင် self-host မလုပ်ပါနှင့်** — အထူးသဖြင့် Outline VPN node ပေါ်တွင်
+container တင်လျှင် ထို node ၏ VPN key များ ရပ်သွားသည်။ အသေးစိတ်ကို
+`ServerDeploy/step_3.md` တွင် ကြည့်ပါ။
