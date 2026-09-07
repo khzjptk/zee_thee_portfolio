@@ -1,9 +1,10 @@
 # Serves the static site. Cloudflare Pages reads _headers; nothing else does,
 # so the same rules are restated here for a self-hosted deployment.
 #
-# SITE_ADDRESS comes from .env — see docker-compose.yml in this folder.
-#   a hostname  (zeethee.store)  -> Caddy gets a Let's Encrypt certificate
-#   :80                          -> plain HTTP, for testing against an IP
+# SITE_ADDRESS comes from .env and should stay :80. Cloudflare terminates TLS
+# at the edge and reaches this container through the tunnel, so Caddy must not
+# try to get a certificate of its own — and must never bind 443, which Outline
+# uses for customer keys on this machine.
 
 {$SITE_ADDRESS} {
 	root * /srv
