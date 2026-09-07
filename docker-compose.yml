@@ -1,0 +1,33 @@
+# Self-hosted deployment of the static site.
+#
+#   cp .env.example .env      # then set SITE_ADDRESS
+#   docker compose up -d
+#
+# Production runs on Cloudflare Pages instead; this is for serving the same
+# files from a server we control, which is how the testing host works.
+services:
+  web:
+    image: caddy:2-alpine
+    container_name: zeethee-web
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      # The site itself is read-only to the server that publishes it.
+      - ./:/srv:ro
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      # Certificates and OCSP staples must survive a restart, or Caddy will ask
+      # Let's Encrypt for a new certificate every time and hit the rate limit.
+      - caddy-data:/data
+      - caddy-config:/config
+    cap_drop: ["ALL"]
+    cap_add: ["NET_BIND_SERVICE"]
+    security_opt: ["no-new-privileges:true"]
+
+volumes:
+  caddy-data:
+  caddy-config:
