@@ -84,8 +84,8 @@ cd web && python3 -m http.server 8080
 
 | နေရာ | တန်ဖိုး |
 |---|---|
-| `data-p1` / `data-p3` (Zee Plus) | `8,000` / `22,000` |
-| `data-p1` / `data-p3` (Zee Max)  | `20,000` / `57,000` |
+| `data-p1` / `data-p3` (Zee Plus) | `6,000` / `17,000` |
+| `data-p1` / `data-p3` (Zee Max)  | `18,000` / `52,000` |
 | `data-save` (Zee Plus / Zee Max) | `2,000` / `3,000` MMK သက်သာ |
 
 ## မထည့်ရန် (BOT_TEXTS.md စည်းကမ်း)
