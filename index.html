@@ -256,7 +256,15 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Noto+Sans+Myanmar:wght@400;600;700&display=swap">
+<!-- Google Fonts သည် တစ်ခုတည်းသော render-blocking resource ဖြစ်ခဲ့သည်။ မြန်မာ mobile
+     network များတွင် fonts.googleapis.com နှေးလျှင် သို့မဟုတ် မရလျှင် browser က
+     ဘာမှ မဆွဲဘဲ စောင့်နေပြီး စာမျက်နှာ ဖြူနေမည် — "မရဘူး" နှင့် ခွဲမရတော့ပါ။
+     media="print" ဖြင့် စတင်၍ load ပြီးမှ ဖွင့်လိုက်လျှင် စာမျက်နှာက ချက်ချင်း
+     ပေါ်ပြီး font များ ရောက်လာမှ လဲသည်။ Fallback stack (Noto Sans Myanmar,
+     Pyidaungsu, Myanmar Text) သည် မြန်မာ device အများစုတွင် ရှိပြီးသား ဖြစ်သည်။ -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Noto+Sans+Myanmar:wght@400;600;700&display=swap"
+      media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Noto+Sans+Myanmar:wght@400;600;700&display=swap"></noscript>
 
 <style>
 /* ═══════════════  TOKENS — logo မှ ဆွဲထုတ်ထားသော palette  ═══════════════
