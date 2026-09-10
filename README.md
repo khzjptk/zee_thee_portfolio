@@ -22,7 +22,39 @@ Outline customer traffic က port `443` ကို သုံးနေပြီး
 ပိုအရေးကြီးသည်မှာ public website တင်လိုက်လျှင် **VPN server ၏ IP ပေါ်သွားပြီး block ခံရနိုင်သည်**။
 Website ကို Cloudflare Pages သို့မဟုတ် သီးခြား VPS တွင်သာ ထားပါ။
 
-## Deploy — Cloudflare Pages
+## Deploy — Vercel (2026-09-10 မှစ၍)
+
+မြန်မာ mobile network (MPT, ATOM) များတွင် **Cloudflare ၏ proxy IP များ ပိတ်ခံရ၍**
+site သို့ မရောက်နိုင်တော့ပါ။ VPN node များကတော့ grey-cloud (DNS only) ဖြစ်၍ Cloudflare
+ကို မဖြတ်ဘဲ ဆက်အလုပ်လုပ်နေသည် — ထို့ကြောင့် ပိတ်ခံရသည်မှာ domain မဟုတ်ဘဲ Cloudflare
+proxy သာ ဖြစ်သည်။ Site ကို Vercel သို့ ရွှေ့ထားသည်။
+
+1. [vercel.com](https://vercel.com) → GitHub ဖြင့် login → **Add New → Project**
+2. `khzjptk/zee_thee_portfolio` ကို import
+   - Framework Preset: **Other** · Root Directory: `./`
+   - Build Command နှင့် Output Directory — **ဗလာထားပါ**
+3. **Settings → Domains** တွင် —
+   - `zeetheedigital.online` → **Connect to an environment → Production** (canonical)
+   - `www.zeetheedigital.online` → **Redirect → 308 → `zeetheedigital.online`**
+
+> ⚠️ **DNS ကို Cloudflare မှာပဲ ထားရမည်။** Vercel ၏ nameserver နည်းလမ်း
+> (`ns1.vercel-dns.com`) ကို **လုံးဝ မသုံးရ** — zone တစ်ခုလုံး ရွှေ့သွားမည်ဖြစ်ပြီး
+> `ztosg1` / `ztosg2` / `ztsg1` / `ztjp1` A record များ ပါသွား၍ **customer key
+> အားလုံး ချက်ချင်း သေမည်** (hostname သည် key ထဲတွင် ပါနေသည်)။ A record နည်းလမ်းကိုသာ
+> သုံးပါ၊ ထို record ကို **grey cloud (DNS only)** ထားပါ — orange cloud ဆိုလျှင်
+> Cloudflare ကို ပြန်ဖြတ်မည်ဖြစ်၍ ရွှေ့တာ အလကားဖြစ်သွားမည်။
+
+> ⚠️ Commit ၏ author email သည် GitHub account နှင့် ကိုက်ညီရမည်။ မကိုက်လျှင် Vercel
+> Hobby plan က *"Deployment Blocked … could not be matched to a GitHub account"*
+> ဟု ပိတ်ပစ်သည်။
+
+### Header များ
+
+`_headers` ကို **Cloudflare** က ဖတ်သည်; `vercel.json` ကို **Vercel** က ဖတ်သည်။
+နှစ်ခုစလုံးတွင် security header ၆ ခု တူညီစွာ ရေးထားသည် — တစ်ခုပြင်လျှင် နောက်တစ်ခုပါ
+လိုက်ပြင်ရမည်။ Platform တစ်ခုတည်း ကျန်တော့မှသာ ကျန်တစ်ခုကို ဖျက်ပါ။
+
+## Deploy — Cloudflare Pages (အရန်)
 
 ### နည်းလမ်း ၁ · Git (အကြံပြု)
 
