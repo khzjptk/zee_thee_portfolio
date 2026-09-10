@@ -84,15 +84,24 @@ cd web && python3 -m http.server 8080
 
 | နေရာ | တန်ဖိုး |
 |---|---|
-| `data-p1` / `data-p3` (Zee Plus) | `6,000` / `17,000` |
-| `data-p1` / `data-p3` (Zee Max)  | `18,000` / `52,000` |
-| `data-save` (Zee Plus / Zee Max) | `2,000` / `3,000` MMK သက်သာ |
+| `data-p1` / `data-p3` (Zee Basic) | `3,000` / `9,000` |
+| `data-p1` / `data-p3` (Zee Plus)  | `7,000` / `20,000` |
+| `data-p1` / `data-p3` (Zee Max)   | `18,000` / `52,000` |
+| `data-save` (Zee Plus / Zee Max)  | `1,000` / `2,000` MMK သက်သာ |
+
+JSON-LD `Offer` သုံးစုံကိုပါ လိုက်ပြင်ရမည် — Google က ဤနေရာကို ဖတ်သည်။
 
 ## မထည့်ရန် (BOT_TEXTS.md စည်းကမ်း)
 
 - ငွေပြန်အမ်းမည် ကတိ
 - Speed အာမခံချက်
-- Server IP, region အရေအတွက်၊ Outline API အချက်အလက်
+- Server IP / hostname, Outline API အချက်အလက်
+- Region တစ်ခုစီမှာ server ဘယ်နှစ်လုံးရှိသည်ဆိုသော အရေအတွက်
+
+> Region **နာမည်** (Singapore, Japan) ကတော့ 2026-09-10 မှစ၍ owner ဆုံးဖြတ်ချက်အရ
+> ရောင်းအားအတွက် ဖော်ပြသည် — `#regions` section နှင့် plan card တိုင်းတွင် ပါသည်။
+> ဖော်ပြရမည်မှာ region နာမည်နှင့် ရွေးချယ်နိုင်ကြောင်းသာ; server အရေအတွက်နှင့်
+> လိပ်စာများ မဟုတ်ပါ။
 
 ## Hosting
 

@@ -84,7 +84,7 @@
       "@type": "Product",
       "@id": "https://zeetheedigital.online/#zee-basic",
       "name": "Zee Basic",
-      "description": "နေ့စဉ် လူမှုကွန်ရက် သုံးစွဲခြင်းနှင့် အင်တာနက် ပေါ့ပေါ့ပါးပါး သုံးစွဲသူများအတွက် စျေးနှုန်းတန်ဖိုး အသက်သာဆုံး Plan",
+      "description": "နေ့စဉ် Social Media, Facebook ပေါ့ပေါ့ပါးပါး အသုံးပြုမည့်သူများအတွက် သင့်တော်သော 50 GB Plan ဖြစ်ပါသည်။",
       "brand": {
         "@id": "https://zeetheedigital.online/#org"
       },
@@ -112,7 +112,7 @@
       "@type": "Product",
       "@id": "https://zeetheedigital.online/#zee-plus",
       "name": "Zee Plus",
-      "description": "Social Media စိတ်ကြိုက်ကြည့်လိုသူများ၊ Google Flow အသုံးပြုသူများနှင့် Device အများအပြား သုံးသူများအတွက် အကောင်းဆုံး Plan",
+      "description": "လူကြိုက်အများဆုံး တန်ဖိုးသင့် Plan! Social Media, Facebook ကြည့်ရှုသူများ၊ Google Flow အပါအဝင် AI Video / AI Tools များ အဆင်ပြေစွာ သုံးလိုသူများအတွက်။",
       "brand": {
         "@id": "https://zeetheedigital.online/#org"
       },
@@ -140,7 +140,7 @@
       "@type": "Product",
       "@id": "https://zeetheedigital.online/#zee-max",
       "name": "Zee Max",
-      "description": "Live Streamer များ၊ Content Creator များ၊ Google Flow နှင့် AI Video Heavy Generator များ၊ Download များသူများနှင့် မိသားစု/ရုံးသုံးအတွက် အကောင်းဆုံး High-Capacity Plan",
+      "description": "အကန့်အသတ်မရှိ ချိတ်ဆက်နိုင်မည့် High-Capacity Plan! Live Streamer များ၊ Content Creator များ၊ Google Flow အပါအဝင် AI Video (Heavy Generation) သုံးစွဲသူများနှင့် Heavy Download ပြုလုပ်သူများအတွက် သီးသန့် Data ပမာဏ။",
       "brand": {
         "@id": "https://zeetheedigital.online/#org"
       },
@@ -205,7 +205,15 @@
           "name": "ဘယ် App နဲ့ ချိတ်ရမလဲ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Android နဲ့ Windows Laptop အတွက် Happ သို့မဟုတ် v2rayTun ကို အကြံပြုပါတယ် — Outline App က Android အချို့မှာ Error ရှိနိုင်လို့ပါ။ iPhone (iOS) နဲ့ Mac အတွက်တော့ Outline VPN App ကို သုံးပါ။ Key က တစ်ခုတည်းဖြစ်ပြီး App အားလုံးမှာ အလုပ်လုပ်ပါတယ်။"
+            "text": "Android နဲ့ Windows Laptop အတွက် Happ သို့မဟုတ် v2rayTun ကို အကြံပြုပါတယ် — Outline App က Android အချို့မှာ အဆင်မပြေမှု ဖြစ်နိုင်လို့ပါ။ iPhone (iOS) နဲ့ Mac အတွက်တော့ Outline VPN App ကို သုံးပါ။ Key က တစ်ခုတည်းဖြစ်ပြီး App အားလုံးမှာ အလုပ်လုပ်ပါတယ်။"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Server Region ဘယ်လို ရွေးရမလဲ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Singapore နဲ့ Japan (Tokyo) Region နှစ်ခု ရှိပြီး Plan သုံးမျိုးလုံးအတွက် ရွေးချယ်ဝယ်ယူနိုင်ပါတယ် — စျေးနှုန်းနဲ့ Data ပမာဏ အတူတူပါပဲ။ အခမဲ့ Trial ယူချိန်ရော Package ဝယ်ချိန်ပါ Bot က Region ရွေးခိုင်းပါလိမ့်မယ်။ VPN Key တစ်ခုဟာ ရွေးထားတဲ့ Region တစ်ခုတည်းမှာသာ အလုပ်လုပ်တာမို့ Region ပြောင်းလိုပါက Package အသစ် ဝယ်ချိန်မှာ ပြန်ရွေးပါ သို့မဟုတ် Admin ကို ဆက်သွယ်ပေးပါ။"
           }
         },
         {
@@ -484,7 +492,9 @@ a{ color:inherit; }
 .toggle button[aria-pressed="true"]{ background:linear-gradient(103deg, var(--violet), var(--blue)); color:#fff; }
 
 .plans{ display:grid; gap:22px; grid-template-columns:1fr; }
-@media (min-width:1000px){ .plans{ grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media (min-width:1000px){
+  .plans{ grid-template-columns:repeat(3,minmax(0,1fr)); grid-template-rows:repeat(6,auto); row-gap:20px; }
+}
 .plan{
   position:relative; background:var(--surface); border:1px solid var(--line);
   border-radius:var(--r-lg); padding:clamp(24px,3.4vw,34px);
@@ -501,7 +511,14 @@ a{ color:inherit; }
 }
 .plan--max .plan__tag{ background:linear-gradient(103deg, var(--violet), var(--blue)); color:#fff; border-color:transparent; }
 .plan__name{ font-size:1.5rem; }
-.plan__desc{ font-size:.93rem; color:var(--text-2); }
+.plan__desc{ font-size:.93rem; color:var(--text-2); display:flex; flex-direction:column; gap:10px; }
+.plan__lead{ color:var(--text); font-weight:600; }
+.plan__points{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; }
+.plan__points li{ position:relative; padding-left:15px; line-height:1.85; }
+.plan__points li::before{
+  content:"•"; position:absolute; left:0; top:0;
+  color:var(--blue-2); font-weight:800;
+}
 
 .meter{ display:flex; flex-direction:column; gap:8px; }
 .meter__bar{ height:8px; border-radius:999px; background:var(--line-soft); overflow:hidden; }
@@ -523,7 +540,52 @@ a{ color:inherit; }
 .feats li{ display:flex; gap:10px; align-items:flex-start; color:var(--text-2); }
 .feats svg{ flex:none; margin-top:9px; color:var(--blue-2); }
 .plan .btn{ margin-top:auto; }
+
+/* Plan အကြောင်း စာကြောင်းအရေအတွက် မတူသဖြင့် card သုံးခုရဲ့ အတွင်းအပိုင်းများ ဘယ်ညာ မညီဖြစ်သည်။
+   Row track များကို parent grid ကနေ မွေးစားလိုက်လျှင် name / desc / meter / price /
+   feats / button ခြောက်ခုလုံး တစ်တန်းတည်း ညီသွားသည်။ Subgrid မရှိသော browser
+   အဟောင်းများတွင် ယခင် flex column အတိုင်း ဆက်လည်ပတ်သည်။ */
+@supports (grid-template-rows: subgrid){
+  @media (min-width:1000px){
+    .plan{ display:grid; grid-template-rows:subgrid; grid-row:span 6; }
+  }
+}
 .plans__note{ margin-top:22px; font-size:.87rem; color:var(--text-3); max-width:74ch; line-height:1.9; }
+
+/* ═══════════════  REGIONS — Plan တိုင်းအတွက် Region ရွေးချယ်ဝယ်ယူနိုင်သည်  ═══════════════ */
+.sec--seam{ border-top:1px solid var(--line-soft); }
+.regions{ display:grid; gap:20px; grid-template-columns:1fr; }
+@media (min-width:860px){ .regions{ grid-template-columns:repeat(2,1fr); } }
+.region{
+  position:relative; overflow:hidden;
+  background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--r-lg); padding:clamp(24px,3.2vw,32px);
+  display:flex; flex-direction:column; gap:14px;
+}
+.region::before{
+  content:""; position:absolute; inset:0 0 auto 0; height:3px;
+  background:linear-gradient(103deg, var(--violet), var(--blue));
+}
+.region__top{ display:flex; align-items:center; gap:13px; }
+.region__code{
+  flex:none; display:grid; place-items:center;
+  width:46px; height:46px; border-radius:14px;
+  background:var(--surface-2); border:1px solid var(--line);
+  font-family:var(--font-display); font-weight:800; font-size:1rem;
+  letter-spacing:.06em; color:var(--blue-2); line-height:1;
+}
+.region__name{ font-size:1.16rem; }
+.region__name small{
+  display:block; font-family:var(--font-body); font-weight:400;
+  font-size:.76rem; letter-spacing:.14em; text-transform:uppercase; color:var(--text-3);
+}
+.region__desc{ font-size:.93rem; color:var(--text-2); }
+.region__for{ list-style:none; margin:auto 0 0; padding:0; display:flex; flex-wrap:wrap; gap:8px; }
+.region__for li{
+  font-size:.8rem; color:var(--text-2); line-height:1.6;
+  background:var(--surface-2); border:1px solid var(--line-soft);
+  border-radius:999px; padding:5px 13px;
+}
 
 /* ═══════════════  STEPS — တကယ့် အစီအစဉ် ဖြစ်၍သာ နံပါတ်တပ်သည်  ═══════════════ */
 .steps{
@@ -666,6 +728,7 @@ a{ color:inherit; }
     </a>
     <nav class="nav__links" aria-label="ပင်မ">
       <a href="#packages">Package များ</a>
+      <a href="#regions">Region</a>
       <a href="#how">ဝယ်ယူပုံ</a>
       <a href="#setup">အသုံးပြုပုံ</a>
       <a href="#faq">မေးခွန်းများ</a>
@@ -764,7 +827,9 @@ a{ color:inherit; }
         <article class="plan reveal">
           <span class="plan__tag">စတင်သုံးရန်</span>
           <h3 class="plan__name">Zee Basic</h3>
-          <p class="plan__desc">နေ့စဉ် လူမှုကွန်ရက် သုံးစွဲခြင်းနှင့် အင်တာနက် ပေါ့ပေါ့ပါးပါး သုံးစွဲသူများအတွက် စျေးနှုန်းတန်ဖိုး အသက်သာဆုံး Plan</p>
+          <div class="plan__desc">
+            <p class="plan__lead">နေ့စဉ် Social Media, Facebook ပေါ့ပေါ့ပါးပါး အသုံးပြုမည့်သူများအတွက် သင့်တော်သော 50 GB Plan ဖြစ်ပါသည်။</p>
+          </div>
 
           <div class="meter">
             <div class="meter__bar"><span class="meter__fill" style="width:17%"></span></div>
@@ -781,6 +846,7 @@ a{ color:inherit; }
             <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Device ၁ လုံး</li>
             <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>သက်တမ်း ရက် ၃၀</li>
             <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Telegram Bot တွင် Data သုံးစွဲမှုနှင့် သက်တမ်းကို 24/7 စစ်ဆေးနိုင်ခြင်း</li>
+            <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Singapore / Japan — Region ရွေးချယ်ဝယ်ယူနိုင်ခြင်း</li>
           </ul>
 
           <a class="btn btn--ghost" href="https://t.me/ZeeTheeDigitalBot" target="_blank" rel="noopener">Zee Basic ဝယ်မည်</a>
@@ -789,7 +855,12 @@ a{ color:inherit; }
         <article class="plan reveal">
           <span class="plan__tag">လူကြိုက်အများဆုံး</span>
           <h3 class="plan__name">Zee Plus</h3>
-          <p class="plan__desc">Social Media စိတ်ကြိုက်ကြည့်လိုသူများ၊ Google Flow အသုံးပြုသူများနှင့် Device အများအပြား သုံးသူများအတွက် အကောင်းဆုံး Plan</p>
+          <div class="plan__desc">
+            <p class="plan__lead">လူကြိုက်အများဆုံး တန်ဖိုးသင့် Plan!</p>
+            <ul class="plan__points">
+              <li>Social Media, Facebook ကြည့်ရှုသူများ၊ Google Flow အပါအဝင် AI Video / AI Tools များ အဆင်ပြေစွာ သုံးလိုသူများအတွက်။</li>
+            </ul>
+          </div>
 
           <div class="meter">
             <div class="meter__bar"><span class="meter__fill" style="width:50%"></span></div>
@@ -807,6 +878,7 @@ a{ color:inherit; }
             <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Device ၃ လုံး တစ်ပြိုင်တည်း</li>
             <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>သက်တမ်း ရက် ၃၀</li>
             <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Telegram Bot တွင် Data သုံးစွဲမှုနှင့် သက်တမ်းကို 24/7 စစ်ဆေးနိုင်ခြင်း</li>
+            <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Singapore / Japan — Region ရွေးချယ်ဝယ်ယူနိုင်ခြင်း</li>
           </ul>
 
           <a class="btn btn--ghost" href="https://t.me/ZeeTheeDigitalBot" target="_blank" rel="noopener">Zee Plus ဝယ်မည်</a>
@@ -815,7 +887,12 @@ a{ color:inherit; }
         <article class="plan plan--max reveal">
           <span class="plan__tag">Pro သုံး</span>
           <h3 class="plan__name">Zee Max</h3>
-          <p class="plan__desc">Live Streamer များ၊ Content Creator များ၊ Google Flow နှင့် AI Video Heavy Generator များ၊ Download များသူများနှင့် မိသားစု/ရုံးသုံးအတွက် အကောင်းဆုံး High-Capacity Plan</p>
+          <div class="plan__desc">
+            <p class="plan__lead">အကန့်အသတ်မရှိ ချိတ်ဆက်နိုင်မည့် High-Capacity Plan!</p>
+            <ul class="plan__points">
+              <li>Live Streamer များ၊ Content Creator များ၊ Google Flow အပါအဝင် AI Video (Heavy Generation) သုံးစွဲသူများနှင့် Heavy Download ပြုလုပ်သူများအတွက် သီးသန့် Data ပမာဏ။</li>
+            </ul>
+          </div>
 
           <div class="meter">
             <div class="meter__bar"><span class="meter__fill" style="width:100%"></span></div>
@@ -832,7 +909,8 @@ a{ color:inherit; }
             <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Data <span class="num">300 GB</span> — တစ်လစီ</li>
             <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Device အကန့်အသတ်မရှိ တစ်ပြိုင်တည်း ချိတ်ဆက်နိုင်ခြင်း</li>
             <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>သက်တမ်း ရက် ၃၀</li>
-            <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Bot ထဲမှာ Data နဲ့ သက်တမ်း စစ်ဆေးနိုင်</li>
+            <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Telegram Bot တွင် Data သုံးစွဲမှုနှင့် သက်တမ်းကို 24/7 စစ်ဆေးနိုင်ခြင်း</li>
+            <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Singapore / Japan — Region ရွေးချယ်ဝယ်ယူနိုင်ခြင်း</li>
           </ul>
 
           <a class="btn btn--go" href="https://t.me/ZeeTheeDigitalBot" target="_blank" rel="noopener">Zee Max ဝယ်မည်</a>
@@ -844,6 +922,66 @@ a{ color:inherit; }
         Bot ရဲ့ <b>Renew</b> Menu မှ မိမိကိုယ်တိုင် တောင်းခံနိုင်ပါတယ် — Admin အတည်ပြုပြီးမှ Key အသစ် ပွင့်ပါမယ်။
         Data စောကုန်သွားရင်လည်း ရက်စောင့်စရာမလိုဘဲ ချက်ချင်း Renew လုပ်နိုင်ပါတယ်။
         Bot, Admin သို့မဟုတ် Facebook Page — ဘယ်ကနေမဆို ဝယ်ယူနိုင်ပါတယ်။
+        Plan အားလုံးအတွက် <b>Singapore</b> နဲ့ <b>Japan</b> Region ကို ရွေးချယ်ဝယ်ယူနိုင်ပါတယ်။
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════ REGIONS ══════════ -->
+  <section class="sec sec--seam" id="regions">
+    <div class="wrap">
+      <div class="sec__head">
+        <span class="eyebrow">Server Region</span>
+        <h2>Singapore နဲ့ Japan — မိမိနှစ်သက်ရာ Region ကို ရွေးချယ်ဝယ်ယူနိုင်ပါသည်</h2>
+        <p>
+          Zee Basic, Zee Plus, Zee Max သုံးမျိုးလုံးအတွက် Singapore နဲ့ Japan Region
+          နှစ်ခု ဖွင့်ပေးထားပါတယ်။ Package ဝယ်ချိန်ရော အခမဲ့ Trial ယူချိန်ပါ မိမိနှစ်သက်ရာ
+          Region တစ်ခုကို Bot ထဲမှာ ကိုယ်တိုင် ရွေးချယ်နိုင်ပြီး၊ Region နှစ်ခုစလုံး
+          စျေးနှုန်း အတူတူပါပဲ — ထပ်ဆောင်းကြေး တစ်ပြားမှ မလိုပါ။
+        </p>
+      </div>
+
+      <div class="regions">
+        <article class="region reveal">
+          <div class="region__top">
+            <span class="region__code" aria-hidden="true">SG</span>
+            <h3 class="region__name">Singapore<small>Region 1</small></h3>
+          </div>
+          <p class="region__desc">
+            မြန်မာနဲ့ ပထဝီအရ အနီးဆုံး Region ဖြစ်လို့ နေ့စဉ်သုံး Browsing, Social Media နဲ့
+            Video ကြည့်ရှုမှုတွေအတွက် အများဆုံး ရွေးချယ်ကြပါတယ်။ ဘာမှ မစဉ်းစားချင်ဘူးဆိုရင်
+            ဒီ Region ကနေ စလိုက်ပါ။
+          </p>
+          <ul class="region__for">
+            <li>Facebook · Messenger</li>
+            <li>နေ့စဉ်သုံး Browsing</li>
+            <li>Video ကြည့်ရှုခြင်း</li>
+          </ul>
+        </article>
+
+        <article class="region reveal">
+          <div class="region__top">
+            <span class="region__code" aria-hidden="true">JP</span>
+            <h3 class="region__name">Japan (Tokyo)<small>Region 2</small></h3>
+          </div>
+          <p class="region__desc">
+            Japan လမ်းကြောင်းက AI Tools, Google Flow, Game Server နဲ့ Streaming Content
+            တွေအတွက် ပိုကိုက်ညီတတ်ပါတယ်။ Singapore လမ်းကြောင်း အဆင်မပြေတဲ့အချိန်
+            ဒုတိယ ရွေးချယ်စရာအဖြစ်လည်း အသုံးဝင်ပါတယ်။
+          </p>
+          <ul class="region__for">
+            <li>AI Tools · Google Flow</li>
+            <li>Game Server</li>
+            <li>Japan Content</li>
+          </ul>
+        </article>
+      </div>
+
+      <p class="plans__note">
+        VPN Key တစ်ခုသည် ရွေးချယ်ထားသော Region တစ်ခုတည်းတွင်သာ အလုပ်လုပ်ပါသည်။
+        Region နှစ်ခုစလုံးအတွက် စျေးနှုန်း၊ Data ပမာဏနဲ့ Device အရေအတွက် အတူတူဖြစ်ပြီး၊
+        Package အသစ် ဝယ်တိုင်း Region ကို ပြန်ရွေးနိုင်ပါတယ်။ လက်ရှိ Key ရဲ့ Region ကို ပြောင်းလိုပါက
+        <a href="https://t.me/ZeeTheeDigitalAdmin" target="_blank" rel="noopener">Admin</a> ကို ဆက်သွယ်ပေးပါ။
       </p>
     </div>
   </section>
@@ -854,7 +992,7 @@ a{ color:inherit; }
       <div class="sec__head">
         <span class="eyebrow">ဝယ်ယူပုံ</span>
         <h2>ဝယ်ယူဖို့ နည်းလမ်း ၃ မျိုး ရှိပါတယ်</h2>
-        <p>မိမိအဆင်ပြေရာ လမ်းကြောင်းကို ရွေးပါ။ ဘယ်နည်းလမ်းနဲ့ ဝယ်ဝယ် ဈေးနှုန်းနဲ့ ဝန်ဆောင်မှု အတူတူပါပဲ။ Website မှာ ငွေပေးချေစရာ မလိုပါ။</p>
+        <p>မိမိအဆင်ပြေရာ လမ်းကြောင်းကို ရွေးပါ။ ဘယ်နည်းလမ်းနဲ့ ဝယ်ဝယ် စျေးနှုန်းနဲ့ ဝန်ဆောင်မှု အတူတူပါပဲ။ Website မှာ ငွေပေးချေစရာ မလိုပါ။</p>
       </div>
 
       <div class="plats plats--3 reveal">
@@ -866,7 +1004,7 @@ a{ color:inherit; }
           </span>
           <p>
             ၂၄ နာရီ ဖွင့်ထားပါတယ်။ အခမဲ့ Trial ရယူခြင်း၊ Data နဲ့ သက်တမ်း စစ်ဆေးခြင်း၊
-            Renew လုပ်ခြင်းတွေကို မိမိကိုယ်တိုင် လုပ်နိုင်ပါတယ်။
+            Renew လုပ်ခြင်းများကို မိမိကိုယ်တိုင် လုပ်ဆောင်နိုင်ပါတယ်။
           </p>
           <a class="btn btn--go" href="https://t.me/ZeeTheeDigitalBot" target="_blank" rel="noopener">ဝယ်မည်</a>
         </article>
@@ -1018,11 +1156,11 @@ a{ color:inherit; }
       <div class="faq">
         <details open>
           <summary>အခမဲ့ Trial ကို ဘယ်လိုရမလဲ?</summary>
-          <p>Telegram Bot ထဲရှိ Free Trial ခလုတ်ကို နှိပ်၍ 1 GB Data (24 နာရီ သက်တမ်း) ရှိသော Trial Key ကို အခမဲ့ ချက်ချင်း ရယူစမ်းသပ်နိုင်ပါသည်။ (Telegram အကောင့်တစ်ခုလျှင် ၁ ကြိမ်သာ ရရှိပါမည်)</p>
+          <p>Telegram Bot ထဲရှိ <b>Free Trial</b> ခလုတ်ကို နှိပ်၍ 1 GB Data (24 နာရီ သက်တမ်း) ရှိသော Trial Key ကို အခမဲ့ ချက်ချင်း ရယူစမ်းသပ်နိုင်ပါသည်။ (Telegram အကောင့်တစ်ခုလျှင် ၁ ကြိမ်သာ ရရှိပါမည်)</p>
         </details>
         <details>
           <summary>Data ကုန်သွားရင် ဘာဖြစ်မလဲ?</summary>
-          <p>Data ဒါမှမဟုတ် သက်တမ်း ပြည့်သွားရင် Key က အလိုအလျောက် ရပ်သွားပါမယ်။ ဆက်သုံးချင်ရင် Bot ရဲ့ Renew Menu ကနေ ချက်ချင်း ဝယ်ယူနိုင်ပါတယ် — ရက်စောင့်စရာ မလိုပါဘူး။</p>
+          <p>Data ဒါမှမဟုတ် သက်တမ်း ပြည့်သွားရင် Key က အလိုအလျောက် ရပ်သွားပါမယ်။ ဆက်သုံးချင်ရင် Bot ရဲ့ <b>Renew</b> Menu ကနေ ချက်ချင်း ဝယ်ယူနိုင်ပါတယ် — ရက်စောင့်စရာ မလိုပါဘူး။</p>
         </details>
         <details>
           <summary>သက်တမ်းမကုန်ခင် Renew လုပ်ရင် ကျန်ရက်တွေ ဆက်ပေါင်းပေးလား?</summary>
@@ -1030,11 +1168,15 @@ a{ color:inherit; }
         </details>
         <details>
           <summary>Telegram မသုံးရင် ဘယ်လို ဝယ်ရမလဲ?</summary>
-          <p>Telegram Account မရှိလည်း ရပါတယ်။ Facebook Page ကို သွားရောက် ဆက်သွယ်ပြီး ဝယ်ယူနိုင်ပါတယ်။ Admin က ငွေလက်ခံပြီး VPN Key ကို တိုက်ရိုက် ထုတ်ပေးပါမယ်။ သက်တမ်းတိုးချိန်မှာလည်း Admin ကို ပြန်ဆက်သွယ်ရုံပါပဲ။</p>
+          <p>Telegram Account မရှိလည်း ရပါတယ်။ <a href="https://www.facebook.com/share/1Bti4S8Frh/" target="_blank" rel="noopener">Facebook Page</a> ကို သွားရောက် ဆက်သွယ်ပြီး ဝယ်ယူနိုင်ပါတယ်။ Admin က ငွေလက်ခံပြီး VPN Key ကို တိုက်ရိုက် ထုတ်ပေးပါမယ်။ သက်တမ်းတိုးချိန်မှာလည်း Admin ကို ပြန်ဆက်သွယ်ရုံပါပဲ။</p>
         </details>
         <details>
           <summary>ဘယ် App နဲ့ ချိတ်ရမလဲ?</summary>
-          <p>Android နဲ့ Windows Laptop အတွက် Happ သို့မဟုတ် v2rayTun ကို အကြံပြုပါတယ် — Outline App က Android အချို့မှာ Error ရှိနိုင်လို့ပါ။ iPhone (iOS) နဲ့ Mac အတွက်တော့ Outline VPN App ကို သုံးပါ။ Key က တစ်ခုတည်းဖြစ်ပြီး App အားလုံးမှာ အလုပ်လုပ်ပါတယ်။</p>
+          <p><b>Android နဲ့ Windows Laptop</b> အတွက် <b>Happ</b> သို့မဟုတ် <b>v2rayTun</b> ကို အကြံပြုပါတယ် — Outline App က Android အချို့မှာ အဆင်မပြေမှု ဖြစ်နိုင်လို့ပါ။ <b>iPhone (iOS) နဲ့ Mac</b> အတွက်တော့ <b>Outline VPN</b> App ကို သုံးပါ။ Key က တစ်ခုတည်းဖြစ်ပြီး App အားလုံးမှာ အလုပ်လုပ်ပါတယ်။</p>
+        </details>
+        <details>
+          <summary>Server Region ဘယ်လို ရွေးရမလဲ?</summary>
+          <p>Singapore နဲ့ Japan (Tokyo) Region နှစ်ခု ရှိပြီး Plan သုံးမျိုးလုံးအတွက် ရွေးချယ်ဝယ်ယူနိုင်ပါတယ် — စျေးနှုန်းနဲ့ Data ပမာဏ အတူတူပါပဲ။ အခမဲ့ Trial ယူချိန်ရော Package ဝယ်ချိန်ပါ Bot က Region ရွေးခိုင်းပါလိမ့်မယ်။ VPN Key တစ်ခုဟာ ရွေးထားတဲ့ Region တစ်ခုတည်းမှာသာ အလုပ်လုပ်တာမို့ Region ပြောင်းလိုပါက Package အသစ် ဝယ်ချိန်မှာ ပြန်ရွေးပါ သို့မဟုတ် Admin ကို ဆက်သွယ်ပေးပါ။</p>
         </details>
         <details>
           <summary>Device ဘယ်နှစ်လုံး သုံးလို့ရလဲ?</summary>
@@ -1042,7 +1184,7 @@ a{ color:inherit; }
         </details>
         <details>
           <summary>၃ လ Plan က ဘယ်လို အလုပ်လုပ်လဲ?</summary>
-          <p>တစ်ကြိမ်တည်း ငွေချေပြီး တစ်လစီ Cycle ၃ ခု ရပါမယ်။ ပထမ Cycle က ချက်ချင်းပွင့်ပြီး၊ ကျန်နှစ်ခုကို Renew Menu ကနေ မိမိကိုယ်တိုင် တောင်းခံရပါမယ်။ Admin အတည်ပြုပြီးမှ Key အသစ် ရောက်လာပါမယ် — ထပ်မံ ငွေပေးချေစရာ မလိုပါဘူး။</p>
+          <p>တစ်ကြိမ်တည်း ငွေချေပြီး တစ်လစီ Cycle ၃ ခု ရပါမယ်။ ပထမ Cycle က ချက်ချင်းပွင့်ပြီး၊ ကျန်နှစ်ခုကို <b>Renew</b> Menu ကနေ မိမိကိုယ်တိုင် တောင်းခံရပါမယ်။ Admin အတည်ပြုပြီးမှ Key အသစ် ရောက်လာပါမယ် — ထပ်မံ ငွေပေးချေစရာ မလိုပါဘူး။</p>
         </details>
         <details>
           <summary>Key ကို သူငယ်ချင်းနဲ့ မျှဝေလို့ရလား?</summary>
@@ -1050,7 +1192,7 @@ a{ color:inherit; }
         </details>
         <details>
           <summary>Data နဲ့ သက်တမ်း ဘယ်လို စစ်ဆေးရမလဲ?</summary>
-          <p>Bot ရဲ့ Package Status Menu မှာ လက်ရှိသုံးပြီးသား Data, ကျန်ရက်နဲ့ VPN Key ကို အချိန်မရွေး ကြည့်နိုင်ပါတယ်။ Data ၉၅% နဲ့ သက်တမ်းကုန်ခါနီး D-3 / D-1 မှာလည်း Bot က သတိပေးစာ ပို့ပေးပါမယ်။</p>
+          <p>Bot ရဲ့ <b>Package Status</b> Menu မှာ လက်ရှိသုံးပြီးသား Data, ကျန်ရက်နဲ့ VPN Key ကို အချိန်မရွေး ကြည့်နိုင်ပါတယ်။ Data ၉၅% နဲ့ သက်တမ်းကုန်ခါနီး D-3 / D-1 မှာလည်း Bot က သတိပေးစာ ပို့ပေးပါမယ်။</p>
         </details>
       </div>
     </div>
@@ -1090,7 +1232,7 @@ a{ color:inherit; }
     </nav>
     <p class="foot__legal">
       © <span class="num" id="yr">2026</span> Zee Thee Digital · Myanmar<br>
-      ဈေးနှုန်းများနှင့် Package အချက်အလက်များ အပြောင်းအလဲ ရှိနိုင်ပါသည်။ နောက်ဆုံးအခြေအနေကို Bot ထဲတွင် အတည်ပြုပါ။
+      စျေးနှုန်းများနှင့် Package အချက်အလက်များ အပြောင်းအလဲ ရှိနိုင်ပါသည်။ နောက်ဆုံးအခြေအနေကို Bot ထဲတွင် အတည်ပြုပါ။
       VPN ကို မိမိနိုင်ငံ၏ ဥပဒေနှင့်အညီ အသုံးပြုပါ။
     </p>
   </div>
