@@ -1,0 +1,14 @@
+# Files that must never be published.
+#
+# Vercel does not serve .git or dotfiles by default, so this is belt and braces
+# rather than the load-bearing guard .assetsignore is on Cloudflare — there the
+# whole repo root is uploaded and the history could be reconstructed from .git
+# with a tool like git-dumper. Keep both while both platforms are in play.
+.git
+.gitignore
+.assetsignore
+.vercelignore
+.env
+.env.*
+README.md
+_headers
